@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'API Komik - ORM Clean Architecture' });
 });
 
+app.use('/api', require('./routes/api'));
+
 async function startServer() {
   await connectDatabase();
   app.listen(PORT, () => {
